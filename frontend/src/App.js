@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import Map from "./pages/map";
 import About from "./pages/about";
+import ThreeJsViewer from "./pages/threejsviewer";
 
 function App() {
   return (
@@ -23,6 +24,11 @@ function App() {
                   About
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/threejs" className="nav-link">
+                  Threejs Sample
+                </Link>
+              </li>
             </div>
           </nav>
           <Routes>
@@ -33,6 +39,7 @@ function App() {
               }
             />
             <Route path="/about" element={<About text="about text" />} />
+            <Route path="/threejs" element={<ThreeJsViewer />} />
           </Routes>
         </div>
       </BrowserRouter>
