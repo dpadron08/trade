@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 
-// TODO: use this instead of hardcoding the height value as 600
 const style = {
   height: 600, // we can control scene size by setting container dimensions
 };
@@ -17,20 +16,20 @@ class ThreeJsViewer extends React.Component {
     this.doRender();
     this.doControls();
     this.addLights();
-    window.addEventListener("resize", this.handleWindowResize);
+    this.setEventListeners();
     this.animate();
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleWindowResize);
     window.cancelAnimationFrame(this.requestID);
-    // this.controls.dispose();
+    this.controls.dispose();
   }
 
   setCamera = () => {
     this.camera = new THREE.PerspectiveCamera(
       45,
-      this.mount.clientWidth / 600,
+      this.mount.clientWidth / this.mount.clientHeight,
       1,
       1000
     );
@@ -59,11 +58,11 @@ class ThreeJsViewer extends React.Component {
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setClearColor(new THREE.Color("hsl(0, 0%, 10%)"));
-
-    this.renderer.setSize(this.mount.clientWidth, 600);
+    this.renderer.setSize(this.mount.clientWidth, this.mount.clientHeight);
     this.mount.appendChild(this.renderer.domElement); // mount using React ref
   };
 
+  // add ability to drag camera POV around
   doControls = () => {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.enableDamping = true;
@@ -90,8 +89,20 @@ class ThreeJsViewer extends React.Component {
     this.scene.add(lights[2]);
   };
 
-  setEvents = () => {
-    // nothing yet
+  setEventListeners = () => {
+    window.addEventListener("resize", this.handleWindowResize);
+  };
+
+  handleWindowResize = () => {
+    const width = this.mount.clientWidth;
+    const height = this.mount.clientHeight;
+
+    this.renderer.setSize(width, height);
+    this.camera.aspect = width / height;
+
+    // Note that after making changes to most of camera properties you have to call
+    // .updateProjectionMatrix for the changes to take effect.
+    this.camera.updateProjectionMatrix();
   };
 
   animate = () => {
