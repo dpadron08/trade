@@ -35,7 +35,7 @@ function App() {
             <Route
               path="/"
               element={
-                <Map storymapsLink="https://story.maps.arcgis.com/apps/StorytellingSwipe/index.html?appid=459ff1719f5f427180cd8b793894052b" />
+                <Map storymapsLink="https://storymaps.arcgis.com/stories/d67072087566491d8c544f9df151b328" />
               }
             />
             <Route path="/about" element={<About text="about text" />} />
