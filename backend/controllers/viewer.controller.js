@@ -1,28 +1,20 @@
 const Object3D = require("../models/object3D.model");
 
-const getViewerExplanation = async (req, res) => {
-  res.type("text/plain");
-  return res.send("Please add an object name and specify mtl obj jpg");
+const getAllObjectData = async (req, res) => {
+  const items = await Object3D.find();
+  return res.send({ items: items });
 };
 
-const getObjectMTL = async (req, res) => {
-  res.type("text/plain");
-  return res.send("RAW MTL FILE");
-};
-
-const getObjectOBJ = async (req, res) => {
-  res.type("text/plain");
-  return res.send("RAW OBJ FILE");
-};
-
-const getObjectImage = async (req, res) => {
-  res.type("image/jpg");
-  res.sendFile("3d_model.jpg", { root: __dirname });
+const getObjectData = async (req, res) => {
+  const object_name = req.params.name;
+  console.log(object_name);
+  const item = await Object3D.find({ name: object_name });
+  return res.send({
+    items: item,
+  });
 };
 
 module.exports = {
-  getViewerExplanation,
-  getObjectMTL,
-  getObjectOBJ,
-  getObjectImage,
+  getAllObjectData,
+  getObjectData,
 };
