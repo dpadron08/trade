@@ -6,18 +6,21 @@ const object3DSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add an object name"],
     },
+    description: {
+      type: String,
+      required: [true, "Please add a description"],
+    },
     obj_file: {
       type: String,
-      required: [true, "Please add an obj file"],
+      required: [true, "Please add an obj file name"],
     },
     mtl_file: {
       type: String,
-      required: [true, "Please add an mtl file"],
-      unique: true,
+      required: [true, "Please add an mtl file name"],
     },
     image_file: {
-      type: mongoose.Schema.Types.Buffer,
-      required: [true, "Please add an image file"],
+      type: String,
+      required: [true, "Please add an image file name"],
     },
   },
   { timestamps: true }
