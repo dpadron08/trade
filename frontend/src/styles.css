@@ -1,0 +1,15 @@
+.Title { 
+    color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 100px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center; }
+
+hr.new1 {
+    border: 1px solid navy;
+    width: 90%;
+    margin: 0 auto;
+}
+  

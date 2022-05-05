@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import Map from "./pages/map";
 import About from "./pages/about";
 import ThreeJsViewer from "./pages/threejsviewer";
+import Cards from "./pages/cards";
 
 function App() {
   return (
@@ -29,6 +30,11 @@ function App() {
                   Threejs Sample
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/cards" className="nav-link">
+                  All Objects
+                </Link>
+              </li>
             </div>
           </nav>
           <Routes>
@@ -40,6 +46,7 @@ function App() {
             />
             <Route path="/about" element={<About text="about text" />} />
             <Route path="/threejs" element={<ThreeJsViewer />} />
+            <Route path="/cards" element={<Cards />} />
           </Routes>
         </div>
       </BrowserRouter>
