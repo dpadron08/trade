@@ -55,8 +55,8 @@ function About(props) {
         <Card.Body>
           <Card.Title>Parker Zane</Card.Title>
           <Card.Text>
-            This is a longer card with supporting text below as a natural
-            lead-in to additional content. This content is a little bit longer.
+          Parker is a first year PhD student in Assyriology at Yale University. 
+          He is interested in the intellectual history of ancient Iraq, human-environment interactions, and the history of astronomy and astrology.
           </Card.Text>
         </Card.Body>
       </Card>
@@ -67,7 +67,8 @@ function About(props) {
         <Card.Body>
           <Card.Title>Alana Liu</Card.Title>
           <Card.Text>
-          Alana is a current junior in Computing and the Arts, Visual Arts at Yale University. She is interested in how innovations in technology can change our interactions with art and media. 
+          Alana is a current junior in Computing and the Arts, Visual Arts at Yale University. 
+          She is interested in how innovations in technology can change our interactions with art and media. 
           </Card.Text>
         </Card.Body>
       </Card>
@@ -100,7 +101,8 @@ function About(props) {
         <Card.Body>
           <Card.Title>Rosa Chang</Card.Title>
           <Card.Text>
-          Rosa is currently a junior Computing and the Arts major at Yale University. Coming from a fine arts background, she is interested in how visual art interacts with interactive technological mediums, such as Computer Graphics.
+          Rosa is currently a junior Computing and the Arts major at Yale University. 
+          Coming from a fine arts background, she is interested in how visual art interacts with interactive technological mediums, such as Computer Graphics.
           </Card.Text>
         </Card.Body>
       </Card>
