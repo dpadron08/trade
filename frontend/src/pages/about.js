@@ -5,9 +5,13 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import glm from "../glm.png";
+import glm from "../glm2.jpeg";
 import rc from "../rc.jpg";
 import al from "../al.jpeg";
+import pz from "../pz.jpeg";
+import dpc from "../lauren-1007252527-1.jpg"
+import ra from "../ra.png"
+import sd from "../IMG_5323.jpg"
 
 function About(props) {
   const [text, setText] = React.useState("");
@@ -46,7 +50,7 @@ function About(props) {
             </Col>
             <Col>
               <Card>
-                <Card.Img variant="top" src={glm} />
+                <Card.Img variant="top" src={pz} />
                 <Card.Body>
                   <Card.Title>Parker Zane</Card.Title>
                   <Card.Text>
@@ -74,11 +78,12 @@ function About(props) {
             </Col>
             <Col>
               <Card>
-                <Card.Img variant="top" src={glm} />
+                <Card.Img variant="top" src={ra} />
                 <Card.Body>
                   <Card.Title>Rohan Ahluwalia</Card.Title>
                   <Card.Text>
-                    Rohan is a Computer Science major at Yale University.
+                    Rohan is a a second-year student pursuing a B.S./M.S. in Computer Science from Yale Univeristy.
+                    He is a student researcher with Dr. Jason Liu in the Gerstein Lab and is involved in several extracurriculars.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -105,6 +110,34 @@ function About(props) {
                     Yale University. Coming from a fine arts background, she is
                     interested in how visual art interacts with interactive
                     technological mediums, such as Computer Graphics.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Img variant="top" src={dpc} />
+                <Card.Body>
+                  <Card.Title>David Padron Castillo</Card.Title>
+                  <Card.Text>
+                    Rosa is currently a junior Computing and the Arts major at
+                    Yale University. Coming from a fine arts background, she is
+                    interested in how visual art interacts with interactive
+                    technological mediums, such as Computer Graphics.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Img variant="top" src={sd} />
+                <Card.Body>
+                  <Card.Title>Sam Eshun Danquah</Card.Title>
+                  <Card.Text>
+                    Sam is a junior Computer Science student at Yale. He is interested
+                    in the many ways computers can intersect with different fields, and 
+                    currently works as a machine learning intern for a startup focused on
+                    ethical deepfake technology.
                   </Card.Text>
                 </Card.Body>
               </Card>
