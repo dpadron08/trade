@@ -44,7 +44,12 @@ function App() {
                 <Map storymapsLink="https://storymaps.arcgis.com/stories/d67072087566491d8c544f9df151b328" />
               }
             />
-            <Route path="/about" element={<About text="TRADE is a project which seeks to investigate the relationship of Dura Europos to the surrounding ancient city sites on a macro and micro scale." />} />
+            <Route
+              path="/about"
+              element={
+                <About text="TRADE is a project which seeks to investigate the relationship of Dura Europos to the surrounding ancient city sites on a macro and micro scale." />
+              }
+            />
             <Route path="/threejs" element={<ThreeJsViewer />} />
             <Route path="/cards" element={<Cards />} />
           </Routes>
