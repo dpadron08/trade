@@ -7,7 +7,7 @@ import "../styles.css";
 
 const style = {
   height: 500,
-  width: 800 // we can control scene size by setting container dimensions
+  width: 800, // we can control scene size by setting container dimensions
 };
 
 class ThreeJsViewer extends React.Component {
@@ -114,15 +114,15 @@ class ThreeJsViewer extends React.Component {
   };
 
   render() {
-    return <div style={{display:"grid",  gridTemplateColumns:"1fr 1fr"}}>
-    <div style={style} ref={(ref) => (this.mount = ref)} />
-    <div>
-    <div className="Title">Object Name</div>
-    <hr className="new1"></hr>
-    </div>
-    
-
-    </div>;
+    return (
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+        <div style={style} ref={(ref) => (this.mount = ref)} />
+        <div>
+          <div className="Title">Object Name</div>
+          <hr className="new1"></hr>
+        </div>
+      </div>
+    );
   }
 }
 
