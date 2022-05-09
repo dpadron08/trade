@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div className="container">
-          <nav className="navbar navbar-expand navbar-dark bg-dark">
+          <nav className="navbar navbar-expand navbar-light bg-light">
             <a href="/" className="navbar-brand">
               TRADE
             </a>
@@ -44,7 +44,7 @@ function App() {
                 <Map storymapsLink="https://storymaps.arcgis.com/stories/d67072087566491d8c544f9df151b328" />
               }
             />
-            <Route path="/about" element={<About text="about text" />} />
+            <Route path="/about" element={<About text="TRADE is a project which seeks to investigate the relationship of Dura Europos to the surrounding ancient city sites on a macro and micro scale." />} />
             <Route path="/threejs" element={<ThreeJsViewer />} />
             <Route path="/cards" element={<Cards />} />
           </Routes>

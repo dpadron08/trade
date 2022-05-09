@@ -1,15 +1,60 @@
 .Title { 
-    color: #111; 
+    color: #ffffff; 
     font-family: 'Helvetica Neue', sans-serif; 
     font-size: 100px; 
     font-weight: bold; 
     letter-spacing: -1px; 
     line-height: 1; 
-    text-align: center; }
+    text-align: center;
+    background-color: #70a0af;
+ }
 
 hr.new1 {
     border: 1px solid navy;
     width: 90%;
     margin: 0 auto;
 }
-  
+
+.head-block1 {
+    color: #ffffff; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 150px; 
+    font-weight: bold; 
+    text-align: center;
+    background-color: #7085a1;
+}
+
+.text-block1 {
+    color: #ffffff; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 35px;
+    /* background-color: #a0c1b9; */
+    text-align: center;
+    margin: 0px 50px 75px 100px;
+    padding-top: 30px;
+    font-style: italic;
+}
+
+.text-block2 {
+    color: #ffffff; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 40px;
+    /* background-color: #a0c1b9; */
+    text-align: center;
+    /* margin: 0px 50px 75px 100px; */
+    padding-top: 5px;
+    padding-bottom: 30px;
+    font-weight: bold; 
+}
+
+.tb1-container {
+    background-color: #7085a1;
+    margin: 0px;
+}
+
+.card-container {
+    padding-left: 110px;
+    padding-right: 110px;
+    padding-bottom: 50px;
+    background-color: #7085a1;
+}
