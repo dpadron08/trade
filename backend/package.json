@@ -9,7 +9,7 @@
     "install-client": "cd ../frontend && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "server": "node server.js",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix ../frontend\""
+    "start": "npm run install-client && npm run build && concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix ../frontend\""
   },
   "keywords": [],
   "author": "",
