@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
+import object3DService from "../services/object3DService";
 import "../styles.css";
 
 const style = {
@@ -36,6 +37,8 @@ class ThreeJsViewer extends React.Component {
     super(props);
     this.state = {
       name: props.name,
+      objectShortDescription: "",
+      objectFullDescription: "",
     };
   }
 
@@ -56,12 +59,28 @@ class ThreeJsViewer extends React.Component {
     this.controls.dispose();
   }
 
+  populateTextFields() {
+    object3DService
+      .getObject(object_settings[this.state.name].name)
+      .then((data) => {
+        console.log("hi done");
+        console.log(data);
+        this.setState({
+          objectShortDescription: data.items[0].short_description,
+          objectFullDescription: data.items[0].full_description,
+        });
+      });
+  }
+
   componentDidMount() {
     this.create3DViewer();
+    this.populateTextFields();
   }
 
   componentDidUpdate() {
-    window.location.reload();
+    if (this.props.name !== this.state.name) {
+      window.location.reload();
+    }
   }
 
   componentWillUnmount() {
@@ -168,9 +187,11 @@ class ThreeJsViewer extends React.Component {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
         <div style={style} ref={(ref) => (this.mount = ref)} />
         <div>
-          <div className="Title">Object Name</div>
+          <div className="Title">{object_settings[this.state.name].name}</div>
           <hr className="new1"></hr>
+          <p>Short description: {this.state.objectShortDescription}</p>
         </div>
+        <p>Full description: {this.state.objectFullDescription}</p>
       </div>
     );
   }
