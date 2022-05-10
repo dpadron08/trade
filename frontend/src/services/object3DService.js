@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8002" + "/api/viewer/";
+const base_url = process.env.baseURL || "http://localhost:8002";
+
+const API_URL = "/api/viewer/";
 
 const getAllObjects = async () => {
   const response = await axios.get(API_URL);

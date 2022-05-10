@@ -21,6 +21,8 @@ const db = mongoose.connection;
 db.on("error", () => console.log("database connection failed"));
 db.once("open", () => console.log("database connection successful"));
 
+app.use("/api/viewer", viewerRouter);
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve(__dirname, "../frontend/build")));
   app.get("*", (req, res) => {
@@ -28,16 +30,14 @@ if (process.env.NODE_ENV === "production") {
       path.resolve(__dirname, "../", "frontend", "build", "index.html")
     );
   });
+} else {
+  app.get("/", (req, res) => {
+    res.type("text/plain");
+    res.send(
+      'Welcome to the Trade backend, please send requests to "api/viewer/{object}/{mtl|obj|jpg}"'
+    );
+  });
 }
-
-app.get("/", (req, res) => {
-  res.type("text/plain");
-  res.send(
-    'Welcome to the Trade backend, please send requests to "api/viewer/{object}/{mtl|obj|jpg}"'
-  );
-});
-
-app.use("/api/viewer", viewerRouter);
 
 app.listen(port, () => {
   console.log("App is running on port " + port);
