@@ -34,6 +34,18 @@ function App() {
               <li className="nav-item">
                 <Link to="/threejs" className="nav-link">
                   Threejs Sample
+                <Link to="/threejs_plaque" className="nav-link">
+                  Plaque Artifact
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/threejs_amphora" className="nav-link">
+                  Amphora Artifact
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/threejs_thymiaterion" className="nav-link">
+                  Thymiaterion Artifact
                 </Link>
               </li>
               <li className="nav-item">
@@ -47,7 +59,7 @@ function App() {
             <Route
               path="/"
               element={
-                <Map storymapsLink="https://storymaps.arcgis.com/stories/d67072087566491d8c544f9df151b328" />
+                <Map storymapsLink="https://storymaps.arcgis.com/stories/d67072087566491d8c544f9df151b328?cover=false" />
               }
             />
             <Route
@@ -56,7 +68,18 @@ function App() {
                 <About text="TRADE is a project which seeks to investigate the relationship of Dura Europos to the surrounding ancient city sites on a macro and micro scale." />
               }
             />
-            <Route path="/threejs" element={<ThreeJsViewer />} />
+            <Route
+              path="/threejs_plaque"
+              element={<ThreeJsViewer name="Plaque" />}
+            />
+            <Route
+              path="/threejs_amphora"
+              element={<ThreeJsViewer name="Amphora" />}
+            />
+            <Route
+              path="/threejs_thymiaterion"
+              element={<ThreeJsViewer name="Thymiaterion" />}
+            />
             <Route path="/cards" element={<Cards />} />
             <Route path="/history" element={<History />} />
           </Routes>
