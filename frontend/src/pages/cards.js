@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import object3DService from "../services/object3DService";
+import "../styles.css";
 
 function Cards() {
   const [amphoraText, setAmphoraText] = React.useState("");
@@ -41,7 +42,7 @@ function Cards() {
           <Card.Body>
             <Card.Title>Thymiaterion</Card.Title>
             <Card.Text>{thymiaterionText}</Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">View Object</Button>
           </Card.Body>
         </Card>
       </Col>
@@ -52,9 +53,9 @@ function Cards() {
             src="https://picsum.photos/600/300/?image=25"
           />
           <Card.Body>
-            <Card.Title>Card title</Card.Title>
+            <Card.Title>Large Green-glazed Amphora</Card.Title>
             <Card.Text>{amphoraText}</Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">View Object</Button>
           </Card.Body>
         </Card>
       </Col>
@@ -65,7 +66,7 @@ function Cards() {
             src="https://picsum.photos/600/300/?image=26"
           />
           <Card.Body>
-            <Card.Title>Card title</Card.Title>
+            <Card.Title>Parthian Soldier Plaque</Card.Title>
             <Card.Text>{plaqueText}</Card.Text>
             <Button
               variant="primary"
