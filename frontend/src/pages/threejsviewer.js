@@ -16,12 +16,14 @@ const object_settings = {
     name: "Thymiaterion",
     mtl: "models/thymiaterion2/Thymiaterion.mtl",
     obj: "models/thymiaterion2/Thymiaterion.obj",
+    yt: "https://www.youtube.com/embed/lwthTpe_PS4",
     adjusting_camera: true,
   },
   Amphora: {
     name: "Large Green-glazed Amphora",
     mtl: "models/amphora/Amphora.mtl",
     obj: "models/amphora/Amphora.obj",
+    yt: "https://www.youtube.com/embed/RPihdTz8Wtg",
     adjusting_camera: true,
   },
   Plaque: {
@@ -184,7 +186,7 @@ class ThreeJsViewer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="obj-body">
       <div classname="obj-base" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
         <div style={style} ref={(ref) => (this.mount = ref)} />
         <div className="right-container">
@@ -195,6 +197,14 @@ class ThreeJsViewer extends React.Component {
       </div>
       <h1 className="all-about">All About This Object...</h1>
       <p className="full-desc">Full description: {this.state.objectFullDescription}</p>
+      <h1 className="all-about">Where did it live?</h1>
+      <iframe className ="yt-embed"
+      width="85%"
+      height="500px"
+      src={object_settings[this.props.name].yt}
+      title="Environment video"
+      frameborder="0"
+    ></iframe>
       </div>
     );
   }
