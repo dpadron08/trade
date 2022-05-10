@@ -41,7 +41,7 @@ function App() {
             <Route
               path="/"
               element={
-                <Map storymapsLink="https://storymaps.arcgis.com/stories/d67072087566491d8c544f9df151b328" />
+                <Map storymapsLink="https://storymaps.arcgis.com/stories/d67072087566491d8c544f9df151b328?cover=false" />
               }
             />
             <Route
