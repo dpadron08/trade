@@ -187,24 +187,34 @@ class ThreeJsViewer extends React.Component {
   render() {
     return (
       <div className="obj-body">
-      <div classname="obj-base" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-        <div style={style} ref={(ref) => (this.mount = ref)} />
-        <div className="right-container">
-          <div className="Title">{object_settings[this.state.name].name}</div>
-          <hr className="new1"></hr>
-          <p className="para4">Short description: {this.state.objectShortDescription}</p>
+        <div
+          classname="obj-base"
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}
+        >
+          <div style={style} ref={(ref) => (this.mount = ref)} />
+          <div className="right-container">
+            <div className="Title">{object_settings[this.state.name].name}</div>
+            <hr className="new1"></hr>
+            <p className="para4">
+              Viewing note: Please scroll with your fingers upward until the
+              image comes into view. Short description:{" "}
+              {this.state.objectShortDescription}
+            </p>
+          </div>
         </div>
-      </div>
-      <h1 className="all-about">All About This Object...</h1>
-      <p className="full-desc">Full description: {this.state.objectFullDescription}</p>
-      <h1 className="all-about">Where did it live?</h1>
-      <iframe className ="yt-embed"
-      width="85%"
-      height="500px"
-      src={object_settings[this.props.name].yt}
-      title="Environment video"
-      frameborder="0"
-    ></iframe>
+        <h1 className="all-about">All About This Object...</h1>
+        <p className="full-desc">
+          Full description: {this.state.objectFullDescription}
+        </p>
+        <h1 className="all-about">Where did it live?</h1>
+        <iframe
+          className="yt-embed"
+          width="85%"
+          height="500px"
+          src={object_settings[this.props.name].yt}
+          title="Environment video"
+          frameborder="0"
+        ></iframe>
       </div>
     );
   }

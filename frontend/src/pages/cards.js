@@ -3,8 +3,13 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import object3DService from "../services/object3DService";
 import "../styles.css";
+
+import thymiaterion from "../thymiaterion.png";
+import amphora from "../amphora.png";
+import plaque from "../plaque.jpg";
 
 function Cards() {
   const [amphoraText, setAmphoraText] = React.useState("");
@@ -35,44 +40,42 @@ function Cards() {
     <Row xs={1} md={3} className="g-4">
       <Col>
         <Card>
-          <Card.Img
-            variant="top"
-            src="https://picsum.photos/600/300/?image=25"
-          />
+          <Card.Img variant="top" src={thymiaterion} />
           <Card.Body>
             <Card.Title>Thymiaterion</Card.Title>
             <Card.Text>{thymiaterionText}</Card.Text>
-            <Button variant="primary">View Object</Button>
+            <Button variant="primary">
+              <Link to="/threejs_thymiaterion" className="nav-link">
+                View Object
+              </Link>
+            </Button>
           </Card.Body>
         </Card>
       </Col>
       <Col>
         <Card>
-          <Card.Img
-            variant="top"
-            src="https://picsum.photos/600/300/?image=25"
-          />
+          <Card.Img variant="top" src={amphora} />
           <Card.Body>
             <Card.Title>Large Green-glazed Amphora</Card.Title>
             <Card.Text>{amphoraText}</Card.Text>
-            <Button variant="primary">View Object</Button>
+            <Button variant="primary">
+              <Link to="/threejs_amphora" className="nav-link">
+                View Object
+              </Link>
+            </Button>
           </Card.Body>
         </Card>
       </Col>
       <Col>
         <Card>
-          <Card.Img
-            variant="top"
-            src="https://picsum.photos/600/300/?image=26"
-          />
+          <Card.Img variant="top" src={plaque} />
           <Card.Body>
             <Card.Title>Parthian Soldier Plaque</Card.Title>
             <Card.Text>{plaqueText}</Card.Text>
-            <Button
-              variant="primary"
-              src="https://picsum.photos/600/300/?image=26"
-            >
-              View Object
+            <Button variant="primary">
+              <Link to="/threejs_plaque" className="nav-link">
+                View Object
+              </Link>
             </Button>
           </Card.Body>
         </Card>

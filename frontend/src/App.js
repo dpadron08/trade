@@ -57,13 +57,13 @@ function App() {
             <Route
               path="/"
               element={
-                <Map storymapsLink="https://storymaps.arcgis.com/stories/d67072087566491d8c544f9df151b328?cover=false" />
+                <Map storymapsLink="https://storymaps.arcgis.com/stories/5e52bc24ec784ae18880409aa03401b7?cover=false" />
               }
             />
             <Route
               path="/about"
               element={
-                <About text="TRADE is a project which seeks to investigate the relationship of Dura Europos to the surrounding ancient city sites on a macro and micro scale." />
+                <About text="TRADE is a project which seeks to investigate the relationship of Dura Europos to the surrounding ancient city sites on a macro and micro scale. Dura Europos was used as a context by which to learn and understand the applications of computer science and data science methods to the humanities. In particular, our project aims to use a modest subset of these tools to create a website, with the goal of incrementally increasing digital availability of information about Dura Europos. " />
               }
             />
             <Route

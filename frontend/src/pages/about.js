@@ -124,10 +124,9 @@ function About(props) {
                 <Card.Body>
                   <Card.Title>David Padron Castillo</Card.Title>
                   <Card.Text>
-                    Rosa is currently a junior Computing and the Arts major at
-                    Yale University. Coming from a fine arts background, she is
-                    interested in how visual art interacts with interactive
-                    technological mediums, such as Computer Graphics.
+                    David is currently a senior studying Computer Science at
+                    Yale University with a certificate in Statistics and Data
+                    Science.
                   </Card.Text>
                 </Card.Body>
               </Card>
