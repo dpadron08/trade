@@ -4,6 +4,7 @@ import Map from "./pages/map";
 import About from "./pages/about";
 import ThreeJsViewer from "./pages/threejsviewer";
 import Cards from "./pages/cards";
+import History from "./pages/history";
 
 function App() {
   return (
@@ -23,6 +24,11 @@ function App() {
               <li className="nav-item">
                 <Link to="/about" className="nav-link">
                   About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/history" className="nav-link">
+                  History of Dura-Europos
                 </Link>
               </li>
               <li className="nav-item">
@@ -52,6 +58,7 @@ function App() {
             />
             <Route path="/threejs" element={<ThreeJsViewer />} />
             <Route path="/cards" element={<Cards />} />
+            <Route path="/history" element={<History />} />
           </Routes>
         </div>
       </BrowserRouter>
