@@ -10,6 +10,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8002;
 //const port = 8002;
+console.log("Using port: " + port);
 
 app.use(cors());
 app.use(express.json());
@@ -20,15 +21,6 @@ const db = mongoose.connection;
 db.on("error", () => console.log("database connection failed"));
 db.once("open", () => console.log("database connection successful"));
 
-app.get("/", (req, res) => {
-  res.type("text/plain");
-  res.send(
-    'Welcome to the Trade backend, please send requests to "api/viewer/{object}/{mtl|obj|jpg}"'
-  );
-});
-
-app.use("/api/viewer", viewerRouter);
-
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve(__dirname, "../frontend/build")));
   app.get("*", (req, res) => {
@@ -37,6 +29,15 @@ if (process.env.NODE_ENV === "production") {
     );
   });
 }
+
+app.get("/", (req, res) => {
+  res.type("text/plain");
+  res.send(
+    'Welcome to the Trade backend, please send requests to "api/viewer/{object}/{mtl|obj|jpg}"'
+  );
+});
+
+app.use("/api/viewer", viewerRouter);
 
 app.listen(port, () => {
   console.log("App is running on port " + port);
