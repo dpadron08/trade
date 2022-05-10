@@ -34,6 +34,7 @@ function App() {
               <li className="nav-item">
                 <Link to="/threejs" className="nav-link">
                   Threejs Sample
+                </Link>
                 <Link to="/threejs_plaque" className="nav-link">
                   Plaque Artifact
                 </Link>
