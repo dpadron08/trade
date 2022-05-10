@@ -31,7 +31,7 @@ function About(props) {
     <div>
       <div className="masthead2">
                 <div className="fw-light">About TRADE</div>
-                <p className="lead">{props.text}</p>
+                <p className="lead2">{props.text}</p>
       </div>
       <div className="tb1-container">
         <div className="text-block2">Meet The Team</div>
@@ -145,6 +145,10 @@ function About(props) {
             </Col>
           </Row>
         </div>
+      </div>
+      <div className="about-footer-container" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+        <div className="about-footer-h1" >What's the point of the models?</div>
+        <div className="para1">The three objects modeled in this project are connected to trade from a variety of perspectives. The first object, a large green-glazed amphora (YUAG 1935.66), depicts a style of pottery that spread across the Middle Euphrates region. The second object, the Parthian soldier plaque (YUAG 1935.59), reflects the movement of art styles and imagery across the Near East. The third object, the thymiaterion (YUAG 1932.1396), is made of raw materials that are not local to Dura, meaning they must have been imported. The routes they took to get from their place of origin to Dura-Europos is uncertain. Comparison with ancient itineraries written for an intellectual elite hint at possible pathways that these objects followed. Through one way or another, these objects, and the ideas embodied in them, made their way to the city of Dura-Europos. </div>
       </div>
     </div>
   );

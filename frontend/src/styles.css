@@ -42,9 +42,9 @@ hr.new1 {
     /* background-color: #a0c1b9; */
     text-align: center;
     /* margin: 0px 50px 75px 100px; */
-    padding-top: 5px;
-    padding-bottom: 30px;
-    font-weight: bold; 
+    padding-top: 50px;
+    /* padding-bottom: 30px; */
+    /* font-weight: bold;  */
 }
 
 .tb1-container {
@@ -71,7 +71,7 @@ hr.new1 {
   }
 
 .masthead2 {
-    height: 100vh;
+    height: 50vh;
     min-height: 500px;
     background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
     background-size: cover;
@@ -81,7 +81,7 @@ hr.new1 {
 
 .fw-light {
     padding-left: 0px;
-    padding-top: 250px;
+    padding-top: 150px;
     text-align: center;
     font-size: 75px;
     font-weight: bold;
@@ -130,10 +130,21 @@ hr.new1 {
     opacity: 0.70;
 }
 
-.lead {
-    padding-left: 0px;
+.lead2 {
+    padding-left: 200px;
+    padding-right: 200px;
     /* padding-top: 250px; */
     text-align: center;
+    font-style: bold;
+    font-size: 25px;
+}
+
+.lead {
+    padding-left: 0px;
+    /* padding-right: 200px; */
+    /* padding-top: 250px; */
+    text-align: center;
+    /* font-style: bold; */
     /* font-size: 75px; */
 }
 
@@ -149,4 +160,24 @@ hr.new1 {
 .para2 {
     padding-left: 70px;
     font-size: large;
+}
+
+.about-footer-container {
+    background-color: #eaece9;
+}
+
+.about-footer-h1 {
+    text-align: center;
+    font-size: 50px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card:hover{
+    transform: scale(1.05);
+ box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.main-map {
+    min-height: 1000px;
 }
