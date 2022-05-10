@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -7,7 +8,8 @@ const viewerRouter = require("./routes/viewer.router");
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT;
+// const port = process.env.PORT || 8002;
+const port = 8002;
 
 app.use(cors());
 app.use(express.json());
@@ -26,6 +28,15 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/viewer", viewerRouter);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.resolve(__dirname, "../frontend/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "../", "frontend", "build", "index.html")
+    );
+  });
+}
 
 app.listen(port, () => {
   console.log("App is running on port " + port);
