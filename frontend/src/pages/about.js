@@ -95,8 +95,7 @@ function About(props) {
                 <Card.Body>
                   <Card.Title>Zubin Mukerjee</Card.Title>
                   <Card.Text>
-                    Zubin is a Computer Science and Math major at Yale
-                    University.
+                    Zubin is a junior at Yale University, studying Mathematics and Computer Science. He is interested in computability theory, cryptography, and probability.
                   </Card.Text>
                 </Card.Body>
               </Card>
