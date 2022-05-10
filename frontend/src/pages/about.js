@@ -5,12 +5,12 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import glm from "../glm2.jpeg";
+import glm from "../glm2.jpg";
 import rc from "../rc.jpg";
-import al from "../al.jpeg";
+import al from "../al.jpg";
 import pz from "../pz.jpeg";
 import dpc from "../lauren-1007252527-1.jpg"
-import ra from "../ra.png"
+import ra from "../ra.jpg"
 import sd from "../IMG_5323.jpg"
 
 function About(props) {
@@ -29,9 +29,11 @@ function About(props) {
     //   Hello {props.text} and data: {JSON.stringify(text)}
     // </div>
     <div>
-      <div className="head-block1">About TRADE</div>
+      <div className="masthead2">
+                <div className="fw-light">About TRADE</div>
+                <p className="lead">{props.text}</p>
+      </div>
       <div className="tb1-container">
-        <div className="text-block1">{props.text}</div>
         <div className="text-block2">Meet The Team</div>
         <div className="card-container">
           <Row xs={2} md={3} className="g-4">
@@ -41,9 +43,8 @@ function About(props) {
                 <Card.Body>
                   <Card.Title>Georgia LaMacchia</Card.Title>
                   <Card.Text>
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
+                    Georgia is a first-year PhD student. Currently, she is abroad in 
+                    Egypt conducting research.
                   </Card.Text>
                 </Card.Body>
               </Card>

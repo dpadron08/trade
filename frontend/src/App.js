@@ -4,6 +4,7 @@ import Map from "./pages/map";
 import About from "./pages/about";
 import ThreeJsViewer from "./pages/threejsviewer";
 import Cards from "./pages/cards";
+import History from "./pages/history";
 
 function App() {
   return (
@@ -26,6 +27,13 @@ function App() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link to="/history" className="nav-link">
+                  History of Dura-Europos
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/threejs" className="nav-link">
+                  Threejs Sample
                 <Link to="/threejs_plaque" className="nav-link">
                   Plaque Artifact
                 </Link>
@@ -73,6 +81,7 @@ function App() {
               element={<ThreeJsViewer name="Thymiaterion" />}
             />
             <Route path="/cards" element={<Cards />} />
+            <Route path="/history" element={<History />} />
           </Routes>
         </div>
       </BrowserRouter>
