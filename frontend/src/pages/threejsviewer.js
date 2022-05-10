@@ -184,14 +184,17 @@ class ThreeJsViewer extends React.Component {
 
   render() {
     return (
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+      <div>
+      <div classname="obj-base" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
         <div style={style} ref={(ref) => (this.mount = ref)} />
-        <div>
+        <div className="right-container">
           <div className="Title">{object_settings[this.state.name].name}</div>
           <hr className="new1"></hr>
-          <p>Short description: {this.state.objectShortDescription}</p>
+          <p className="para4">Short description: {this.state.objectShortDescription}</p>
         </div>
-        <p>Full description: {this.state.objectFullDescription}</p>
+      </div>
+      <h1 className="all-about">All About This Object...</h1>
+      <p className="full-desc">Full description: {this.state.objectFullDescription}</p>
       </div>
     );
   }
