@@ -1,18 +1,28 @@
 .Title { 
-    color: #ffffff; 
+    color: #8a5a27; 
     font-family: 'Helvetica Neue', sans-serif; 
-    font-size: 100px; 
+    font-size: 60px; 
     font-weight: bold; 
     letter-spacing: -1px; 
     line-height: 1; 
     text-align: center;
-    background-color: #70a0af;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #e8e4dc;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: auto;
  }
+
+.right-container {
+    background-color: #e8e4dc;
+}
 
 hr.new1 {
     border: 1px solid navy;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    /* margin: 20 20; */
 }
 
 .head-block1 {
@@ -22,6 +32,11 @@ hr.new1 {
     font-weight: bold; 
     text-align: center;
     background-color: #7085a1;
+}
+
+.yt-embed {
+    padding-left: 200px;
+    padding-top: 20px;
 }
 
 .text-block1 {
@@ -164,6 +179,7 @@ hr.new1 {
 
 .about-footer-container {
     background-color: #eaece9;
+    padding-bottom: 30px;
 }
 
 .about-footer-h1 {
@@ -171,6 +187,7 @@ hr.new1 {
     font-size: 50px;
     font-style: italic;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 50px;
 }
 
 .card:hover{
@@ -178,6 +195,61 @@ hr.new1 {
  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
+.btn-primary, .btn-primary:hover {
+    background-color: white !important;
+    color: #8a5a27;
+    border-color: black;
+}
+
+.card {
+    background-color: #e8e4dc;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #5e3d1a;
+    outline-color: antiquewhite;
+}
+
+.obj-body {
+    background-color: #e8e4dc;
+    padding-bottom: 50px;
+}
+
 .main-map {
     min-height: 1000px;
+}
+
+.obj-base {
+    background-color: #e8e4dc;
+}
+
+.all-about {
+    background-color: #e8e4dc;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 85px;
+    font-style: italic;
+    padding-left: 30px;
+    padding-top: 10px;
+    color: #8a5a27;
+
+}
+
+.full-desc {
+    background-color: #e8e4dc;
+    min-height: 100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.para4 {
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* padding-left: 20px; */
+    text-align: center;
+}
+
+.para8 {
+    padding-right: 50px;
+    font-size: large;
+    padding-top: 20px;
 }
