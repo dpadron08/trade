@@ -10,8 +10,36 @@ const style = {
   width: 800, // we can control scene size by setting container dimensions
 };
 
+const object_settings = {
+  Thymiaterion: {
+    name: "Thymiaterion",
+    mtl: "models/thymiaterion2/Thymiaterion.mtl",
+    obj: "models/thymiaterion2/Thymiaterion.obj",
+    adjusting_camera: true,
+  },
+  Amphora: {
+    name: "Large Green-glazed Amphora",
+    mtl: "models/amphora/Amphora.mtl",
+    obj: "models/amphora/Amphora.obj",
+    adjusting_camera: true,
+  },
+  Plaque: {
+    name: "Parthian Soldier Plaque",
+    mtl: "models/plaque/Figure.mtl",
+    obj: "models/plaque/Figure.obj",
+    adjusting_camera: false,
+  },
+};
+
 class ThreeJsViewer extends React.Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: props.name,
+    };
+  }
+
+  create3DViewer() {
     this.setCamera();
     this.setScene();
     this.loadModel();
@@ -22,10 +50,22 @@ class ThreeJsViewer extends React.Component {
     this.animate();
   }
 
-  componentWillUnmount() {
+  destroy3DViewer() {
     window.removeEventListener("resize", this.handleWindowResize);
     window.cancelAnimationFrame(this.requestID);
     this.controls.dispose();
+  }
+
+  componentDidMount() {
+    this.create3DViewer();
+  }
+
+  componentDidUpdate() {
+    window.location.reload();
+  }
+
+  componentWillUnmount() {
+    this.destroy3DViewer();
   }
 
   setCamera = () => {
@@ -36,6 +76,9 @@ class ThreeJsViewer extends React.Component {
       1000
     );
     this.camera.position.z = 9;
+    if (object_settings[this.props.name].adjusting_camera) {
+      this.camera.position.z = 12;
+    }
   };
 
   setScene = () => {
@@ -46,12 +89,15 @@ class ThreeJsViewer extends React.Component {
 
   loadModel = () => {
     var mtlLoader = new MTLLoader();
-    mtlLoader.load("sample_3d_assets/3d_model.mtl", (materials) => {
+    mtlLoader.load(object_settings[this.props.name].mtl, (materials) => {
       materials.preload();
       var objLoader = new OBJLoader();
       objLoader.setMaterials(materials);
-      objLoader.load("sample_3d_assets/3d_model.obj", (object) => {
+      objLoader.load(object_settings[this.props.name].obj, (object) => {
+        this.scene.background = new THREE.Color(0xa9a9a9);
+        this.object = object;
         this.scene.add(object);
+        this.camera.lookAt(object.position);
       });
     });
   };
@@ -70,6 +116,10 @@ class ThreeJsViewer extends React.Component {
     this.controls.enableDamping = true;
     this.controls.dampingFactor = 0.25;
     this.controls.enableZoom = true;
+    if (object_settings[this.props.name].adjusting_camera) {
+      this.controls.panSpeed = 0.05;
+      this.controls.rotateSpeed = 0.05;
+    }
   };
 
   // adding some lights to the scene
