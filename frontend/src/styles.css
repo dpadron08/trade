@@ -34,6 +34,11 @@ hr.new1 {
     background-color: #7085a1;
 }
 
+.yt-embed {
+    padding-left: 200px;
+    padding-top: 20px;
+}
+
 .text-block1 {
     color: #000000; 
     font-family: 'Helvetica Neue', sans-serif; 
@@ -201,6 +206,11 @@ hr.new1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #5e3d1a;
     outline-color: antiquewhite;
+}
+
+.obj-body {
+    background-color: #e8e4dc;
+    padding-bottom: 50px;
 }
 
 .main-map {
